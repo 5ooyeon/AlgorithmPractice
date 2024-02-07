@@ -26,14 +26,14 @@ public class 치자피즈 {
 
             int pointer = n-1; //현재 들어가있는
 
-            Boolean getOut = false;
-            while(getOut == false) {
+            // Boolean getOut = false;
+            while(set.size()!=1) {
                 for(int i=0;i<n;i++) {
                     chizza[i][1] /= 2;
                     if(chizza[i][1] == 0) {
                         set.remove(chizza[i][0]);
                         if(set.size()==1) { //남은 피자 수가 하나라면 종료
-                            getOut = true; break;
+                            break;
                         }
                         if(pointer<m-1) {
                             chizza[i][0] = ++pointer; //피자 인덱스 저장
