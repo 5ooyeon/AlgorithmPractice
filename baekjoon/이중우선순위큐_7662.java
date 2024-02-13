@@ -4,8 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
+
+
 
 public class 이중우선순위큐_7662 {
     public static void main(String[] args) throws NumberFormatException, IOException {
@@ -16,7 +20,8 @@ public class 이중우선순위큐_7662 {
             int n = Integer.parseInt(bf.readLine());
             PriorityQueue<Integer> minPQ = new PriorityQueue<>();
             PriorityQueue<Integer> maxPQ = new PriorityQueue<>(Collections.reverseOrder());
-
+            PriorityQueue<Integer> erasedMaxQueue = new PriorityQueue<>();
+            
             StringTokenizer st;
             for(int c=0;c<n;c++) {
                 st = new StringTokenizer(bf.readLine());
@@ -27,11 +32,15 @@ public class 이중우선순위큐_7662 {
                     String temp = st.nextToken();
                     if(temp.equals("-1") && minPQ.size()!=0) {
                         int num = minPQ.poll();
-                        maxPQ.remove(num);
+                        set.add(num);
                     } else if(temp.equals("1") && maxPQ.size()!=0) {
                         int num = maxPQ.poll();
-                        minPQ.remove(num);
+                        set.add(num);
                     }
+                }
+
+                if(minPQ.isEmpty() || maxPQ.isEmpty()) {
+                    minPQ.clear(); maxPQ.clear();
                 }
             }
             if(minPQ.size()==0) {
