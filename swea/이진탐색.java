@@ -28,8 +28,6 @@ public class 이진탐색 {
                 //오른쪽 자식노드에 값이 있는지 확인
                 if(putNums[idx+1]==0) { //오른쪽 노드가 비어있을 때
                     putNums[idx/=2] = i; continue;
-                } 딘ㄷ {
-                    
                 }
             }
         }
