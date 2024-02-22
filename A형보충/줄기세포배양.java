@@ -8,83 +8,83 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-
-class Cell {
-
-    int isAlive;
-    int x;
-    int y;
-    int createdTime;
-    int hp;
-
-    static PriorityQueue<Cell> list;
-
-    @Override
-    public String toString() {
-        return "[isAlive=" + isAlive + ", x=" + x + ", y=" + y + ", createdTime=" + createdTime + ", hp=" + hp
-                + "]";
-    }
-
-    Cell() {
-    }
-
-    Cell(int x, int y, int createdTime, int hp, int isAlive) {
-        this.x = x;
-        this.y = y;
-        this.createdTime = createdTime;
-        this.hp = hp;
-        this.isAlive = isAlive;
-    }
-
-    void putCell(Cell cell) {
-        for(Cell c: list) {
-            if(c.x== cell.x && c.y == cell.y) {
-                return;
-            }
-        }
-        list.add(cell);
-
-    }
-
-    ArrayList<Cell> getCells(int time) {
-
-        ArrayList<Cell> newList = new ArrayList<>();
-
-        for(Cell c : list) {
-            if(c.createdTime + c.hp + 1 == time) { //활성상태일경우 리스트 받아오기
-                // System.out.println("활성화되는 세포: "+c.toString());
-                newList.add(c);
-            }
-        }
-        return newList;
-    }
-
-    void changeAlive(int time) {
-        for(Cell c: list) {
-            if(c.createdTime + c.hp == time) {
-                c.isAlive = 0; //활성상태
-            } else if(c.createdTime + c.hp + c.hp == time) {
-                c.isAlive = -1; //비활성상태
-            }
-        }
-    }
-
-    int count(int time) {
-        int cnt = 0;
-        for(Cell c : list) {
-            if(c.createdTime + c.hp + c.hp > time) {
-                cnt++;
-            }
-        }
-        return cnt;
-    }
-
-    PriorityQueue<Cell> getAll() {
-        return list;
-    }
-}
-
 public class 줄기세포배양 {
+
+    static class Cell{
+        int isAlive;
+        int x;
+        int y;
+        int createdTime;
+        int hp;
+    
+        PriorityQueue<Cell> list;
+    
+        @Override
+        public String toString() {
+            return "[isAlive=" + isAlive + ", x=" + x + ", y=" + y + ", createdTime=" + createdTime + ", hp=" + hp
+                    + "]";
+        }
+    
+        Cell() {
+        }
+    
+        Cell(int x, int y, int createdTime, int hp, int isAlive) {
+            this.x = x;
+            this.y = y;
+            this.createdTime = createdTime;
+            this.hp = hp;
+            this.isAlive = isAlive;
+        }
+    
+        void putCell(Cell cell) {
+            for(Cell c: list) {
+                if(c.x== cell.x && c.y == cell.y) {
+                    return;
+                }
+            }
+            list.add(cell);
+    
+        }
+    
+        ArrayList<Cell> getCells(int time) {
+    
+            ArrayList<Cell> newList = new ArrayList<>();
+    
+            for(Cell c : list) {
+                if(c.createdTime + c.hp + 1 == time) { //활성상태일경우 리스트 받아오기
+                    // System.out.println("활성화되는 세포: "+c.toString());
+                    newList.add(c);
+                }
+            }
+            return newList;
+        }
+    
+        void changeAlive(int time) {
+            for(Cell c: list) {
+                if(c.createdTime + c.hp == time) {
+                    c.isAlive = 0; //활성상태
+                } else if(c.createdTime + c.hp + c.hp == time) {
+                    c.isAlive = -1; //비활성상태
+                }
+            }
+        }
+    
+        int count(int time) {
+            int cnt = 0;
+            for(Cell c : list) {
+                if(c.createdTime + c.hp + c.hp > time) {
+                    cnt++;
+                }
+            }
+            return cnt;
+        }
+    
+        PriorityQueue<Cell> getAll() {
+            return list;
+        }
+    }
+
+
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));

@@ -1,11 +1,8 @@
 package baekjoon;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
 
@@ -19,7 +16,7 @@ public class 가운데를말해요_1655 {
         PriorityQueue<Integer> maxpq = new PriorityQueue<>();
 
         minpq.offer(Integer.parseInt(bf.readLine()));
-
+        sb.append(minpq.peek()+"\n");
         for(int i=1;i<N;i++) {
             int temp = Integer.parseInt(bf.readLine());
             if(minpq.peek() >= temp) {
@@ -27,15 +24,18 @@ public class 가운데를말해요_1655 {
             } else {
                 maxpq.offer(temp);
             }
-
             
-            while(minpq.size()-1 > maxpq.size()) {
-                maxpq.offer(minpq.poll());
+            while(minpq.size()-maxpq.size()!=1 && minpq.size()-maxpq.size() != 0) {
+                if(maxpq.size() >= minpq.size()) {
+                    minpq.offer(maxpq.poll());
+                } else if(maxpq.size() < minpq.size()) {
+                    maxpq.offer(minpq.poll());
+                }
             }
 
-            System.out.println(minpq.peek());
+            sb.append(minpq.peek()+"\n");
             
         }
-
+        System.out.println(sb.toString());
     }
 }
