@@ -13,14 +13,7 @@ public class 집합_비트마스크_11723 {
         int S= 0;
         for(int i=0;i<n;i++) {
             st = new StringTokenizer(bf.readLine());
-            switch (st.nextToken()) {
-                case "add":
-                    S = 
-                    break;
-            
-                default:
-                    break;
-            }
+
         }
     }
 }
