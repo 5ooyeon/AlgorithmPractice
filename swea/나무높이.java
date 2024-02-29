@@ -16,6 +16,8 @@ public class 나무높이 {
         int t = Integer.parseInt(bf.readLine());
         StringTokenizer st;
         for(int tc = 1; tc <= t; tc++) {
+
+            sb.append("#"+tc+" ");
             N = Integer.parseInt(bf.readLine());
 
             arr = new int[N][2];
@@ -40,25 +42,27 @@ public class 나무높이 {
                 }
                 
             });
-            for(int i=0;i<arr.length;i++) {
-                for(int j=0;j<2;j++) {
-                    System.out.print(arr[i][j]+" ");
-                }
-                System.out.println();
+            maxHeight = arr[N-1][0];
+            if(arr[0][0] == maxHeight) {
+                sb.append("0\n");
+            } else {
+                sb.append(givemul(0)+"\n");
             }
-            System.out.println(givemul(0));
         }
+        System.out.println(sb.toString());
     }
     static int givemul(int day) throws InterruptedException {
 
         while(wholeTree != N) {
-            for(int i=0;i<arr.length;i++) {
-                for(int j=0;j<2;j++) {
-                    System.out.print(arr[i][j]+" ");
-                }
-                System.out.println();
-            }
-            Thread.sleep(5000);
+            day++;
+            // Thread.sleep(5000);
+            // System.out.print("initial: ");
+            // for(int i=0;i<arr.length;i++) {
+            //     for(int j=0;j<2;j++) {
+            //         System.out.print(arr[i][j]+" ");
+            //     }
+            //     System.out.println();
+            // }
             if(day%2 == 1) {
                 //홀수인 날
                 for(int i=0;i<arr.length-wholeTree;i++) {
@@ -67,7 +71,7 @@ public class 나무높이 {
                         arr[i][1] = arr[i][0] == maxHeight ? -1 : 0;
                         oddCnt--; evenCnt++;
 
-                        System.out.println("day is "+day+", i is "+i+", arr[i][0] is "+arr[i][0]+", arr[i][1] is "+arr[i][1]);
+                        // System.out.println("day is "+day+", i is "+i+", arr[i][0] is "+arr[i][0]+", arr[i][1] is "+arr[i][1]);
 
                         if(arr[i][1] == -1) {
                             wholeTree++;
@@ -79,9 +83,10 @@ public class 나무높이 {
                 //짝수인 날
                 for(int i=0;i<arr.length-wholeTree;i++) {
                     if(arr[i][0] > 1) {
-                        arr[i][0]++;
+                        arr[i][0]+=2;
                         arr[i][1] = arr[i][0] == maxHeight ? -1 : 1;
                         oddCnt++; evenCnt--;
+                        // System.out.println("day is "+day+", i is "+i+", arr[i][0] is "+arr[i][0]+", arr[i][1] is "+arr[i][1]);
                         if(arr[i][1] == -1) {
                             wholeTree++;
                         }
@@ -97,7 +102,6 @@ public class 나무높이 {
                 }
                 
             });
-            day++;
         }
         return day;
     }
