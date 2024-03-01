@@ -1,4 +1,4 @@
-package baekjoon;
+package swea;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -6,17 +6,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class N_Queen_9663 {
+public class N_Queen {
     static int ans, n, arr[];
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        n = Integer.parseInt(bf.readLine());
-        arr = new int[n];
-        ans = 0;
-        nQueen(0);
-        bw.write(Integer.toString(ans));
+        int t = Integer.parseInt(bf.readLine());
+        for(int tc = 1; tc<=t ; tc++) {
+            sb.append("#"+tc+" ");
+            n = Integer.parseInt(bf.readLine());
+            arr = new int[n];
+            ans = 0;
+            nQueen(0);
+            sb.append(ans+"\n");
+        }
+        bw.write(sb.toString());
         bw.flush();
     }
 
@@ -40,5 +46,4 @@ public class N_Queen_9663 {
         }
         return false;
     }
-
 }
