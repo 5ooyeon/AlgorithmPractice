@@ -1,31 +1,22 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.lang.reflect.Array;
-import java.util.HashSet;
-import java.util.LinkedList;
+import java.io.*;
 import java.util.*;
 
-public class N과M9 {
-    static int n, m, arr[], visited[];
+public class N과M11 {
+    static int n,m, arr[];
     static HashSet<String> set = new HashSet<>();
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
         StringBuilder sb = new StringBuilder();
-        
         n = Integer.parseInt(st.nextToken()); m = Integer.parseInt(st.nextToken());
         arr = new int[n];
-        visited = new int[n];
-
         st = new StringTokenizer(bf.readLine());
         for(int i=0;i<n;i++) {
             arr[i] = Integer.parseInt(st.nextToken());
         }
 
-        Arrays.sort(arr);
         LinkedList<Integer> ansList = new LinkedList<>();
         dfs(ansList);
         ArrayList<String> ans = new ArrayList<>(set);
@@ -36,10 +27,9 @@ public class N과M9 {
                 StringTokenizer st1 = new StringTokenizer(o1);
                 StringTokenizer st2 = new StringTokenizer(o2);
                 while(st1.hasMoreTokens()) {
-                    String temp1 = st1.nextToken();
-                    String temp2 = st2.nextToken();
-                    if(!temp1.equals(temp2)) {
-                        return Integer.parseInt(temp1) - Integer.parseInt(temp2);
+                    int t1 = Integer.parseInt(st1.nextToken()), t2 = Integer.parseInt(st2.nextToken());
+                    if(t1 != t2) {
+                        return t1-t2;
                     }
                 }
                 return 0;
@@ -49,27 +39,22 @@ public class N과M9 {
         for(String a : ans) {
             sb.append(a+"\n");
         }
-        System.out.println(sb.toString());
+        System.out.print(sb.toString());
     }
     static void dfs(LinkedList<Integer> ansList) {
         if(ansList.size() == m) {
-            String temp = "";
+            StringBuilder sb = new StringBuilder();
             for(int a : ansList) {
-                temp += Integer.toString(a)+" ";
-                // sb.append(a+" ");
+                sb.append(a+" ");
             }
-            // sb.append("\n");
-            set.add(temp);
+            set.add(sb.toString());
             return;
         }
+
         for(int i=0;i<n;i++) {
-            if(visited[i] == 0) {
-                visited[i] = 1;
-                ansList.add(arr[i]);
-                dfs(ansList);
-                ansList.removeLast();
-                visited[i] = 0;
-            }
+            ansList.add(arr[i]);
+            dfs(ansList);
+            ansList.removeLast();
         }
     }
 }
