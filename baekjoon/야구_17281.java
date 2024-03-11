@@ -45,8 +45,6 @@ public class 야구_17281 {
                 }
             }
         }
-
-
     }
     static int getScore(LinkedList<Integer> players) {
         int turn = 0;
