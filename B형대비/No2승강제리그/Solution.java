@@ -30,7 +30,7 @@ class Solution {
                 int ret = usersolution.move();
                 ans = sc.nextInt();
                 if (ans != ret) {
-//                	System.out.println("Move wrong: ans== "+ans+", ret== "+ret);
+                	System.out.println("Move wrong: ans== "+ans+", ret== "+ret);
                     ok = false;
                 } else {
 //                	System.out.println("Move right");
@@ -39,7 +39,7 @@ class Solution {
                 int ret = usersolution.trade();
                 ans = sc.nextInt();
                 if (ans != ret) {
-//                	System.out.println("Trade wrong: ans== "+ans+", ret== "+ret);
+                	System.out.println("Trade wrong: ans== "+ans+", ret== "+ret);
                     ok = false;
                 } else {
 //                	System.out.println("Trade right");
@@ -52,7 +52,7 @@ class Solution {
     public static void main(String[] args) throws Exception {
         int T, MARK;
 
-        System.setIn(new java.io.FileInputStream("res/sample_input2.txt"));
+        System.setIn(new java.io.FileInputStream("res/sample_input.txt"));
         sc = new Scanner(System.in);
         T = sc.nextInt();
         MARK = sc.nextInt();

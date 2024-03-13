@@ -1,9 +1,7 @@
 package B형대비.No4성적조회;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.TreeMap;
 import java.util.TreeSet;
 
 class UserSolution {
@@ -33,6 +31,10 @@ class UserSolution {
 
         }
 
+        Student(int mScore) {
+            this.mScore = mScore;
+        }
+
         Student(int mId, int mGrade, char[] mGender, int mScore) {
             this.mId = mId;
             this.mGrade = mGrade;
@@ -52,6 +54,9 @@ class UserSolution {
     }
 
 	public void init() {
+        for(int i=0;i<6;i++) {
+            set[i] = new TreeSet<>();
+        }
 		return;
 	}
 
@@ -91,9 +96,11 @@ class UserSolution {
                 if(mGender[b][0] == 'f') {
                     idx++;
                 }
-                set[idx].ceiling(null);
+                Student s = new Student(mScore);
+                int temp = set[idx].ceiling(s).mId;
+                returnInt = temp < returnInt ? temp : returnInt;
             }
         }
-        return 0;
+        return returnInt;
 	}
 }

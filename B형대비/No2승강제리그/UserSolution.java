@@ -1,13 +1,9 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.PriorityQueue;
 import java.util.*;
 
 class UserSolution {
 
-    static LinkedList<Player>[] tempLeagues;
     static TreeSet<Player>[] leagues;
+    //0, 2, 4, 6, 8 이렇게 같은 리그...
 
     class Player{
     	int id;
@@ -34,69 +30,95 @@ class UserSolution {
     void init(int N, int L, int mAbility[]) {
 //        leagues = new Player[L][N / L];
         int idx = 0;
-        for (int i = 0; i < L; i++) {
+        leagues = new TreeSet[2*L];
+        for (int i = 0; i < 2*L; i++) {
         	leagues[i] = new TreeSet<>(C);
-            int[] leagueArray = Arrays.copyOfRange(mAbility, idx, idx + N / L);
+        	int[] leagueArray;
+        	//짝수일 때는 앞 리그이므로, N/2*L 담기
+        	if(i%2==0) {
+                leagueArray = Arrays.copyOfRange(mAbility, idx, idx + N / (2*L));        		
+        	} else {
+        		//홀수일 때는 뒤 리그이므로, (N/(2*L)) +1 담기
+        		leagueArray = Arrays.copyOfRange(mAbility, idx, idx + (N/(2*L)) +1);
+        	}
+
 
             for(int j=0;j<leagueArray.length;j++) {
             	leagues[i].add(new Player(idx+j, leagueArray[j]));
             }
-            idx += N / L;
+            
+            idx += N / (2*L);
+            
+            if(i%2==1) {
+            	idx++;
+            }
         }
         sortPlayers();
+        //출력 확인용
+//        for(int i=0;i<leagues.length-1;i+=2) {
+//        	Iterator<Player> itr = leagues[i].iterator();
+//        	while(itr.hasNext()) {
+//        		Player p = itr.next();
+//        		System.out.print(p.ability+"(id: "+p.id+"), ");
+//        	}
+//        	System.out.print(" and ");
+//        	itr = leagues[i+1].iterator();
+//        	while(itr.hasNext()) {
+//        		Player p = itr.next();
+//        		System.out.print(p.ability+"(id: "+p.id+"), ");
+//        	}
+//        	System.out.println();
+//        }
+
     }
 
     int move() {
         int sum = 0;
-        for (int i = 0; i < leagues.length-1 ; i++) {
-            Player lowPlayer = leagues[i].pollLast();
-            Player highPlayer = leagues[i+1].pollFirst();
-            tempLeagues[i].add(highPlayer);
-            tempLeagues[i+1].add(lowPlayer);
-            sum += lowPlayer.id + highPlayer.id;
+        for (int i = 0; i < leagues.length-3 ; i+=2) {
+            Player highLeague = leagues[i+1].pollLast();
+            Player lowLeague = leagues[i+2].pollFirst();
+            
+            leagues[i+1].add(lowLeague);
+            leagues[i+2].add(highLeague);
+            
+            sum += (highLeague.id + lowLeague.id);
         }
+        //앞리그 뒷리그 수 정렬해주는 매소드 실행
         sortPlayers();
-
+        
         return sum;
     }
 
     int trade() {
         int sum = 0;
-        for (int i = 0; i < leagues.length-1; i++) {
-            Player middlePlayer = leagues[i].
-            Player highPlayer = leagues[i+1].pollFirst();
-            leagues[toLeague][0] = middlePlayer;
-            leagues[fromLeague][(leagues[fromLeague].length)/2] = highPlayer;
+        for (int i = 0; i < leagues.length-3; i+=2) {
+        	Player highLeague = leagues[i+1].pollFirst();
+        	Player lowLeague = leagues[i+2].pollFirst();
+        	
+        	leagues[i+1].add(lowLeague);
+        	leagues[i+2].add(highLeague);
+        	
+        	sum += (highLeague.id + lowLeague.id);
         }
+        //앞리그 뒷리그 수 정렬해주는 매소드 실행
         sortPlayers();
         return sum;
     }
-
-    private int movePlayer(int fromLeague, int toLeague) {
-        Player lowPlayer = leagues[fromLeague].last();
-        Player highPlayer = leagues[toLeague].first();
-        leagues[toLeague][ = lowPlayer;
-        leagues[fromLeague][leagues[fromLeague].length-1] = highPlayer;
-        return highPlayer.id + lowPlayer.id;
-    }
-
-    private int tradePlayer(int fromLeague, int toLeague) {
-        Player middlePlayer = leagues[fromLeague][(leagues[fromLeague].length)/2];
-        Player highPlayer = leagues[toLeague][0];
-        leagues[toLeague][0] = middlePlayer;
-        leagues[fromLeague][(leagues[fromLeague].length)/2] = highPlayer;
-        return highPlayer.id + middlePlayer.id;
-    }
     
     private void sortPlayers() {
-    	for (int i = 0; i < leagues.length; i++) {
-    	    Arrays.sort(leagues[i], (o1, o2) -> {
-    	        int abilityComparison = Integer.compare(o2.ability, o1.ability);
-    	        if (abilityComparison == 0) {
-    	            return Integer.compare(o1.id, o2.id);
-    	        }
-    	        return abilityComparison;
-    	    });
+    	for (int i = 0; i < leagues.length-1; i+=2) {
+    		//앞 리그 leagues[i], 뒷 리그 leagues[i+1]
+    		
+    		while(leagues[i].last().ability < leagues[i+1].first().ability) {
+    			leagues[i].add(leagues[i+1].pollFirst());
+    			leagues[i+1].add(leagues[i].pollLast());
+    		}
+    		while(leagues[i].last().ability == leagues[i+1].first().ability && leagues[i].last().id > leagues[i+1].first().id) {
+    			leagues[i].add(leagues[i+1].pollFirst());
+    			leagues[i+1].add(leagues[i].pollLast());
+    		}
+    		Player first = leagues[i].last(), last = leagues[i+1].first();
+    		//
     	}
     }
     
