@@ -25,8 +25,10 @@ class UserSolution {
 
 	char moveCursor(int mRow, int mCol) {
 		int size = (mRow-1) * W + mCol-1;
-		
-		while(frontDeque.size()!=size) {
+//		if(size > frontDeque.size() + backDeque.size()) {
+//			size = frontDeque.size() + backDeque.size();
+//		}
+		while(frontDeque.size()!=size && backDeque.size()!=0) {
 			if(frontDeque.size()<size) {
 				frontDeque.offerLast(backDeque.pollFirst());
 			} else if(frontDeque.size()>size) {
@@ -49,4 +51,5 @@ class UserSolution {
 		}
 		return retNum;
 	}
+
 }
