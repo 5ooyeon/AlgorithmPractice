@@ -48,7 +48,5 @@ public class 함께하는효도_7727 {
             return;
         }
 
-        
-
     }
 }
