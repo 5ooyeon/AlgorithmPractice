@@ -66,7 +66,7 @@ public class 전력난_6497 {
 
 
         int cnt = 0, costSum = 0;
-        while(cnt != M-1) {
+        while(cnt != M-1 && !set.isEmpty()) {
             Road r = set.pollFirst();
 
             int a = find(r.h1), b = find(r.h2);
