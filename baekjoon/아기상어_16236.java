@@ -98,48 +98,26 @@ public class 아기상어_16236 {
                 time += eatenShark.distance;
 
                 //현재 babyshark의 위치 기준 가까운 순서 업데이트
-                int cnt = sharks.size();
-                // PriorityQueue<Info> temp = new PriorityQueue<>(new Comparator<Info>() {
-
-                //     @Override
-                //     public int compare(Info o1, Info o2) {
-                //         if(o1.distance == o2.distance) {
-                //             if(o1.x == o2.x) {
-                //                 return o1.y - o2.y;
-                //             }
-                //             return o1.x - o2.x;
-                //         }
-                //         return o1.distance - o2.distance;
-                //     }
-                    
-                // });
-                // while(!sharks.isEmpty()) {
-                //     Info updateShark = sharks.poll();
-                //     updateShark.distance = getDistance(updateShark);
-                //     temp.offer(updateShark);
-                // }
-                // sharks = temp;
-            // sharks 업데이트 부분 수정
                 PriorityQueue<Info> temp = new PriorityQueue<>(new Comparator<Info>() {
+
                     @Override
                     public int compare(Info o1, Info o2) {
-                        if (o1.distance == o2.distance) {
-                            if (o1.x == o2.x) {
+                        if(o1.distance == o2.distance) {
+                            if(o1.x == o2.x) {
                                 return o1.y - o2.y;
                             }
                             return o1.x - o2.x;
                         }
                         return o1.distance - o2.distance;
                     }
+                    
                 });
-
-                while (!sharks.isEmpty()) {
+                while(!sharks.isEmpty()) {
                     Info updateShark = sharks.poll();
                     updateShark.distance = getDistance(updateShark);
                     temp.offer(updateShark);
                 }
-                sharks.clear();
-                sharks.addAll(temp);
+                sharks = temp;
 
             
             }
@@ -165,12 +143,16 @@ public class 아기상어_16236 {
         cnt = Integer.MAX_VALUE;
         visited = new int[N][N];
         visited[shark.x][shark.y] = 1;
+        System.out.println("starting dfs: "+shark.x+" "+shark.y);
+        System.out.println("babyShark at "+babyShark.x+" "+babyShark.y+", time: "+time);
         dfs(shark.x, shark.y, 0);
+        
+        System.out.println("ending dfs: "+shark.x+" "+shark.y+", cnt: "+cnt);
         return cnt;
     }
 
     static void dfs(int x, int y, int dis) {
-        // System.out.println(x+" "+y);
+
         if(x == babyShark.x && y == babyShark.y) {
             cnt = cnt < dis ? cnt : dis;
             return;
