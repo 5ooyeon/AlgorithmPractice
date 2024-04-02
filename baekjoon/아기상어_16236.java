@@ -1,14 +1,7 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class 아기상어_16236 {
 
@@ -36,7 +29,7 @@ public class 아기상어_16236 {
 
     static int N, arr[][], time, cnt, visited[][];
     static int[] dx = {-1,0,1,0}, dy = {0,1,0,-1};
-    static PriorityQueue<Info> pq = new PriorityQueue<>();
+    static PriorityQueue<Info> sharkList = new PriorityQueue<>();
     static Info babyShark;
 
     public static void main(String[] args) throws IOException {
@@ -51,7 +44,7 @@ public class 아기상어_16236 {
                 arr[i][j]= Integer.parseInt(st.nextToken());
 
                 if(arr[i][j] >0 && arr[i][j] < 7) {
-                    pq.add(new Info(i, j, arr[i][j]));
+                    sharkList.add(new Info(i, j, arr[i][j]));
                 }
 
 
@@ -62,91 +55,108 @@ public class 아기상어_16236 {
             }
         }
 
-        //상어 정보 담을 list만들기
-        Queue<Info> sharks = new ArrayDeque<>();
+        //거리 순으로 상어 정보 담을 pq만들기 
+        PriorityQueue<Info> sharks = new PriorityQueue<>(new Comparator<Info>() {
+
+            @Override
+            public int compare(Info o1, Info o2) {
+                if(o1.distance == o2.distance) {
+                    if(o1.x == o2.x) {
+                        return o1.y - o2.y;
+                    }
+                    return o1.x - o2.x;
+                }
+                return o1.distance - o2.distance;
+            }
+            
+        });
         //0은 빈칸, 1,2,3,4,5,6 물고기 크기, 9는 아기상어
 
-        //size up 하면 다시 실행할 while문
-        first : while(!pq.isEmpty()) {
-
-            //본인보다 작은 크기의 상어들을 poll
-            while(!pq.isEmpty() && pq.peek().size < babyShark.size) {
-                Info info = pq.poll();
-                System.out.println(info.toString());
-                sharks.add(info);
+        whole : while(true) {
+            //sharklist중 babyshark보다 사이즈가 작은 상어들(먹을 수 있는 상어)을 sharks에 넣기
+            while(!sharkList.isEmpty() && sharkList.peek().size < babyShark.size) {
+                Info shark = sharkList.poll();
+                shark.distance = getDistance(shark);
+                sharks.offer(shark);
             }
 
-            int eatingCount = 0;
+            //몇번 먹었는지 체크
+            int eatingCnt = babyShark.size;
+            // System.out.println("now eatingCnt: "+eatingCnt+", time: "+time);
+            while(eatingCnt != 0 && !sharks.isEmpty()) {
+                Info eatenShark = sharks.poll();
 
-            //거리별 정렬해줄 pq 만들기
-            PriorityQueue<Info> eatingOrder = new PriorityQueue<>(new Comparator<Info>() {
-
-                @Override
-                public int compare(Info o1, Info o2) {
-                    if(o1.distance == o2.distance) {
-                        if(o1.x == o2.x) {
-                            return o1.y - o2.y;
-                        }
-                        return o1.x - o2.x;
-                    }
-                    return o1.distance - o2.distance;
+                if(eatenShark.distance == Integer.MAX_VALUE) {
+                    //먹을 수 있는 상어가 없는 상태
+                    break whole;
                 }
-                
-            });
-
-
-
-            second : while(true) {
-
-                //먹을 상어들 넣어주기.
-                while(!sharks.isEmpty()) {
-                    Info shark = sharks.poll();
-                    System.out.println(shark.toString());
-                    //거리 업데이트 후 eatingorder에 넣어주기
-                    shark.distance = getDistance(shark);
-                    System.out.println(shark.toString());
-                    eatingOrder.offer(shark);
-                }
-
-                //먹을 상어가 없는경우 break
-                if(eatingOrder.peek().distance == Integer.MAX_VALUE) {
-                    System.out.println("111");
-                    break first;
-                }
-                System.out.println("222");
-                //먹기!
-
-                Info eatenShark = eatingOrder.poll();
-                
-                time += eatenShark.distance;
-                System.out.println("distance is : "+eatenShark.distance+", time is :"+time);
+                eatingCnt--;
+                // System.out.println("Now eating: "+eatenShark.toString());
+                arr[babyShark.x][babyShark.y] = 0;
                 babyShark.x = eatenShark.x;
                 babyShark.y = eatenShark.y;
-                eatingCount++;
+                time += eatenShark.distance;
 
-                //eatingOrder에 있는거 다 sharks에 넣어주기
-                while(!eatingOrder.isEmpty()) {
-                    sharks.offer(eatingOrder.poll());
+                //현재 babyshark의 위치 기준 가까운 순서 업데이트
+                int cnt = sharks.size();
+                // PriorityQueue<Info> temp = new PriorityQueue<>(new Comparator<Info>() {
+
+                //     @Override
+                //     public int compare(Info o1, Info o2) {
+                //         if(o1.distance == o2.distance) {
+                //             if(o1.x == o2.x) {
+                //                 return o1.y - o2.y;
+                //             }
+                //             return o1.x - o2.x;
+                //         }
+                //         return o1.distance - o2.distance;
+                //     }
+                    
+                // });
+                // while(!sharks.isEmpty()) {
+                //     Info updateShark = sharks.poll();
+                //     updateShark.distance = getDistance(updateShark);
+                //     temp.offer(updateShark);
+                // }
+                // sharks = temp;
+            // sharks 업데이트 부분 수정
+                PriorityQueue<Info> temp = new PriorityQueue<>(new Comparator<Info>() {
+                    @Override
+                    public int compare(Info o1, Info o2) {
+                        if (o1.distance == o2.distance) {
+                            if (o1.x == o2.x) {
+                                return o1.y - o2.y;
+                            }
+                            return o1.x - o2.x;
+                        }
+                        return o1.distance - o2.distance;
+                    }
+                });
+
+                while (!sharks.isEmpty()) {
+                    Info updateShark = sharks.poll();
+                    updateShark.distance = getDistance(updateShark);
+                    temp.offer(updateShark);
                 }
+                sharks.clear();
+                sharks.addAll(temp);
 
-                //먹은 횟수가 상어크기만큼 됐다면
-                if(eatingCount == babyShark.size) {
-                    babyShark.size++;
-                    //여기서 모든 eatingOrder에 있는 것들을 sharks에 옮기는 작업 필요.
-
-
-                    break second;
-                }
-
-                if(sharks.isEmpty()) {
-                    break first;
-                }
-
+            
             }
 
+            if(eatingCnt !=0) {
+                // System.out.println(eatingCnt);
+                break whole;//끝
+            }
+
+            babyShark.size++;
+            while(!sharks.isEmpty()) {
+                Info s = sharks.poll();
+                sharkList.offer(s);
+            }
+            System.out.println(babyShark.size);
         }
         System.out.println(time);
-
     }
 
     static int getDistance(Info shark) {
@@ -160,13 +170,14 @@ public class 아기상어_16236 {
     }
 
     static void dfs(int x, int y, int dis) {
+        // System.out.println(x+" "+y);
         if(x == babyShark.x && y == babyShark.y) {
             cnt = cnt < dis ? cnt : dis;
             return;
         }
 
         //아기상어보다 사이즈가 크면 못지나감.
-        if(cnt <= dis || arr[x][y] > babyShark.size) {
+        if(cnt <= dis || (arr[x][y] > babyShark.size && arr[x][y] != 9)) {
             return;
         }
 

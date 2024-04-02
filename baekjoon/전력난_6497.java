@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 import java.util.TreeSet;
 
 public class 전력난_6497 {
-
     static class Road{
         int h1, h2, cost;
 
@@ -24,59 +23,60 @@ public class 전력난_6497 {
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(bf.readLine());
-        int M = Integer.parseInt(st.nextToken()), N = Integer.parseInt(st.nextToken());
-
-        arr = new int[M];
-
-        for(int i=0;i<M;i++) {
-            arr[i] = i;
-        }
-
-        TreeSet<Road> set = new TreeSet<>(new Comparator<Road>() {
-
-            @Override
-            public int compare(Road o1, Road o2) {
-                if(o1.cost == o2.cost) {
-                    return -1;
-                }
-                return o1.cost - o2.cost;
-            }
-            
-        });
-
-        int totalCost = 0;
-
         while(true) {
-            st = new StringTokenizer(bf.readLine());
+            StringTokenizer st = new StringTokenizer(bf.readLine());
+            int M = Integer.parseInt(st.nextToken()), N = Integer.parseInt(st.nextToken());
 
-            int a = Integer.parseInt(st.nextToken()),
-            b = Integer.parseInt(st.nextToken());
-
-            if(a==0 && b==0) {
+            if(M==0 && N==0) {
                 break;
             }
 
-            int c = Integer.parseInt(st.nextToken());
-
-            set.add(new Road(a, b, c));
-
-            totalCost += c;
-        }
-
-
-        int cnt = 0, costSum = 0;
-        while(cnt != M-1 && !set.isEmpty()) {
-            Road r = set.pollFirst();
-
-            int a = find(r.h1), b = find(r.h2);
-            if(a!=b) {
-                cnt++; costSum+= r.cost;
-                arr[a] = b;
+            arr = new int[M];
+    
+            for(int i=0;i<M;i++) {
+                arr[i] = i;
             }
+    
+            TreeSet<Road> set = new TreeSet<>(new Comparator<Road>() {
+    
+                @Override
+                public int compare(Road o1, Road o2) {
+                    if(o1.cost == o2.cost) {
+                        return -1;
+                    }
+                    return o1.cost - o2.cost;
+                }
+                
+            });
+    
+            int totalCost = 0;
+    
+            for(int i=0;i<N;i++) {
+                st = new StringTokenizer(bf.readLine());
+    
+                int a = Integer.parseInt(st.nextToken()),
+                b = Integer.parseInt(st.nextToken()),
+                c = Integer.parseInt(st.nextToken());
+    
+                set.add(new Road(a, b, c));
+    
+                totalCost += c;
+            }
+    
+            int cnt = 0, costSum = 0;
+            while(cnt != M-1 && !set.isEmpty()) {
+                Road r = set.pollFirst();
+    
+                int a = find(r.h1), b = find(r.h2);
+                if(a!=b) {
+                    cnt++; costSum+= r.cost;
+                    arr[a] = b;
+                }
+            }
+    
+            System.out.println(totalCost - costSum);
         }
 
-        System.out.println(totalCost - costSum);
     }
 
     static int find(int h1) {
