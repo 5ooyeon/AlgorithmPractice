@@ -5,10 +5,10 @@ import java.util.*;
 
 public class 아기상어2트_16236 {
 
-    static class Info implements Comparable<Info> {
+    static class Shark implements Comparable<Shark> {
         int x, y, size, distance, eaten;
 
-        Info(int x, int y, int size) {
+        Shark(int x, int y, int size) {
             this.x = x;
             this.y = y;
             this.size = size;
@@ -17,7 +17,7 @@ public class 아기상어2트_16236 {
         }
 
         @Override
-        public int compareTo(Info o) {
+        public int compareTo(Shark o) {
             return Integer.compare(this.size, o.size);
         }
 
@@ -27,7 +27,7 @@ public class 아기상어2트_16236 {
             return "(" + x + ", " + y + ") " + size + ", " + distance;
         }
         
-        // info에 grow 함수 추가
+        // Shark에 grow 함수 추가
         // 먼저 먹고 내 몸집만큼 먹게되면 size up 후 eaten = 0
         public void grow() {
             eaten++;
@@ -41,8 +41,8 @@ public class 아기상어2트_16236 {
     // dp쓰면 visit배열 안써도됩니다. -> visit역할까지 해줘서
     static int N, arr[][], time, cnt, /* visited[][], */ dp[][];
     static int[] dx = { -1, 0, 1, 0 }, dy = { 0, 1, 0, -1 };
-    static PriorityQueue<Info> sharkList = new PriorityQueue<>();
-    static Info babyShark;
+    static PriorityQueue<Shark> sharkList = new PriorityQueue<>();
+    static Shark babyShark;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -56,21 +56,21 @@ public class 아기상어2트_16236 {
                 arr[i][j] = Integer.parseInt(st.nextToken());
 
                 if (arr[i][j] > 0 && arr[i][j] < 7) {
-                    sharkList.add(new Info(i, j, arr[i][j]));
+                    sharkList.add(new Shark(i, j, arr[i][j]));
                 }
 
                 if (arr[i][j] == 9) {
                     // 아기상어위치 업데이트
-                    babyShark = new Info(i, j, 2);
+                    babyShark = new Shark(i, j, 2);
                 }
             }
         }
 
         // 거리 순으로 상어 정보 담을 pq만들기
-        PriorityQueue<Info> sharks = new PriorityQueue<>(new Comparator<Info>() {
+        PriorityQueue<Shark> sharks = new PriorityQueue<>(new Comparator<Shark>() {
 
             @Override
-            public int compare(Info o1, Info o2) {
+            public int compare(Shark o1, Shark o2) {
                 if (o1.distance == o2.distance) {
                     if (o1.x == o2.x) {
                         return o1.y - o2.y;
@@ -88,7 +88,7 @@ public class 아기상어2트_16236 {
         whole: while (true) {
             // sharklist중 babyshark보다 사이즈가 작은 상어들(먹을 수 있는 상어)을 sharks에 넣기            
             while (!sharkList.isEmpty() && sharkList.peek().size < babyShark.size) {
-                Info shark = sharkList.poll();
+                Shark shark = sharkList.poll();
                 shark.distance = getDistance(shark);
                 sharks.offer(shark);
             }
@@ -96,7 +96,7 @@ public class 아기상어2트_16236 {
             // 몇번 먹었는지 체크
             if(sharks.isEmpty())
                 break whole;
-            Info eatenShark = sharks.poll();
+            Shark eatenShark = sharks.poll();
 
             if (eatenShark.distance == Integer.MAX_VALUE) {
                 // 먹을 수 있는 상어가 없는 상태
@@ -113,9 +113,9 @@ public class 아기상어2트_16236 {
             
 
             // sharks 업데이트 부분 수정
-            PriorityQueue<Info> temp = new PriorityQueue<>(new Comparator<Info>() {
+            PriorityQueue<Shark> temp = new PriorityQueue<>(new Comparator<Shark>() {
                 @Override
-                public int compare(Info o1, Info o2) {
+                public int compare(Shark o1, Shark o2) {
                     if (o1.distance == o2.distance) {
                         if (o1.x == o2.x) {
                             return o1.y - o2.y;
@@ -133,7 +133,7 @@ public class 아기상어2트_16236 {
             dp = new int[N][N];
             dfs(babyShark.x, babyShark.y, 0);
             while (!sharks.isEmpty()) {
-                Info updateShark = sharks.poll();
+                Shark updateShark = sharks.poll();
                 updateShark.distance = getDistance(updateShark);
                 temp.offer(updateShark);
             }
@@ -143,7 +143,7 @@ public class 아기상어2트_16236 {
             
             
             while (!sharks.isEmpty()) {
-                Info s = sharks.poll();
+                Shark s = sharks.poll();
                 sharkList.offer(s);
             }
 //            System.out.println(babyShark.size);
@@ -152,7 +152,7 @@ public class 아기상어2트_16236 {
     }
 
     // 이 shark는 먹이다.
-    static int getDistance(Info shark) {
+    static int getDistance(Shark shark) {
         // dfs로 양방향 탐색하며 최단경로 찾기.
         // 아기상어 기준으로 shark의 x,y까지.
         cnt = Integer.MAX_VALUE;
