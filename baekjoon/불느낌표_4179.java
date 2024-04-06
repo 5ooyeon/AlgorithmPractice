@@ -3,7 +3,7 @@ package baekjoon;
 import java.io.*;
 import java.util.*;
 
-public class 불_5427 {
+public class 불느낌표_4179 {
 
     static class Coor {
         int x, y;
@@ -16,55 +16,51 @@ public class 불_5427 {
 
     static int n, m, visited[][];
     static char arr[][];
-    static Coor Person;
     static Queue<Coor> fires, people;
     static int[] dx = { -1, 0, 1, 0 }, dy = { 0, 1, 0, -1 };
     static boolean getOut, isPossible;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(bf.readLine());
-        for (int tc = 0; tc < t; tc++) {
-            StringTokenizer st = new StringTokenizer(bf.readLine());
-            m = Integer.parseInt(st.nextToken());
-            n = Integer.parseInt(st.nextToken());
-            arr = new char[n][m];
-            visited = new int[n][m];
-            fires = new ArrayDeque<>();
-            people = new ArrayDeque<>();
+        StringTokenizer st = new StringTokenizer(bf.readLine());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        arr = new char[n][m];
+        visited = new int[n][m];
+        fires = new ArrayDeque<>();
+        people = new ArrayDeque<>();
 
-            for (int i = 0; i < n; i++) {
-                arr[i] = bf.readLine().toCharArray();
-                for (int j = 0; j < m; j++) {
-                    switch (arr[i][j]) {
-                        case '*':
-                            fires.offer(new Coor(i, j));
-                            break;
-                        case '@':
-                            visited[i][j] = 1;
-                            people.offer(new Coor(i, j));
-                            break;
-                        default:
-                            break;
-                    }
+        for (int i = 0; i < n; i++) {
+            arr[i] = bf.readLine().toCharArray();
+            for (int j = 0; j < m; j++) {
+                switch (arr[i][j]) {
+                    case 'F':
+                        fires.offer(new Coor(i, j));
+                        break;
+                    case 'J':
+                        visited[i][j] = 1;
+                        people.offer(new Coor(i, j));
+                        break;
+                    default:
+                        break;
                 }
             }
-            int time = 0;
-            isPossible = true;
-            getOut = false;
-            while (isPossible && !getOut) {
-                time++;
-                fireBfs();
-                personBfs();
-            }
-
-            if (!isPossible || !getOut) {
-                System.out.println("IMPOSSIBLE");
-            } else {
-                System.out.println(time);
-            }
-
         }
+        int time = 0;
+        isPossible = true;
+        getOut = false;
+        while (isPossible && !getOut) {
+            time++;
+            fireBfs();
+            personBfs();
+        }
+
+        if (!isPossible || !getOut) {
+            System.out.println("IMPOSSIBLE");
+        } else {
+            System.out.println(time);
+        }
+
     }
 
     private static void fireBfs() {
@@ -74,10 +70,10 @@ public class 불_5427 {
 
             for (int i = 0; i < 4; i++) {
                 int x = fire.x + dx[i], y = fire.y + dy[i];
-                
+
                 try {
-                    if (arr[x][y] != '#' && arr[x][y] != '*') {
-                        arr[x][y] = '*';
+                    if (arr[x][y] != '#' && arr[x][y] != 'F') {
+                        arr[x][y] = 'F';
                         returningQueue.offer(new Coor(x, y));
                     }
                 } catch (ArrayIndexOutOfBoundsException e) {

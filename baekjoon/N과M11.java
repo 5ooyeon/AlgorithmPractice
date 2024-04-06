@@ -4,57 +4,49 @@ import java.io.*;
 import java.util.*;
 
 public class N과M11 {
-    static int n,m, arr[];
-    static HashSet<String> set = new HashSet<>();
+    static int n, m, arr[];
+    static         StringBuilder sb = new StringBuilder();
+    // static HashSet<String> set = new HashSet<>();
+
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
-        StringBuilder sb = new StringBuilder();
-        n = Integer.parseInt(st.nextToken()); m = Integer.parseInt(st.nextToken());
-        arr = new int[n];
+
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+
+        HashSet<Integer> set = new HashSet<>();
+
         st = new StringTokenizer(bf.readLine());
-        for(int i=0;i<n;i++) {
-            arr[i] = Integer.parseInt(st.nextToken());
+        for (int i = 0; i < n; i++) {
+            set.add(Integer.parseInt(st.nextToken()));
         }
 
-        LinkedList<Integer> ansList = new LinkedList<>();
-        dfs(ansList);
-        ArrayList<String> ans = new ArrayList<>(set);
-        Collections.sort(ans, new Comparator<String>() {
+        arr = new int[set.size()];
+        
+        Iterator itr = set.iterator();
 
-            @Override
-            public int compare(String o1, String o2) {
-                StringTokenizer st1 = new StringTokenizer(o1);
-                StringTokenizer st2 = new StringTokenizer(o2);
-                while(st1.hasMoreTokens()) {
-                    int t1 = Integer.parseInt(st1.nextToken()), t2 = Integer.parseInt(st2.nextToken());
-                    if(t1 != t2) {
-                        return t1-t2;
-                    }
-                }
-                return 0;
-            }
-            
-        });
-        for(String a : ans) {
-            sb.append(a+"\n");
+        for(int i=0;i<arr.length;i++) {
+            arr[i] = (int) itr.next();
         }
-        System.out.print(sb.toString());
+
+        Arrays.sort(arr);
+        int[] ans = new int[m];
+        dfs(ans, 0);
+        System.out.print(sb);
     }
-    static void dfs(LinkedList<Integer> ansList) {
-        if(ansList.size() == m) {
-            StringBuilder sb = new StringBuilder();
-            for(int a : ansList) {
-                sb.append(a+" ");
+        
+    static void dfs(int[] ans, int idx) {
+        if(idx == m) {
+            for(int i=0;i<idx;i++) {
+                sb.append(ans[i]+" ");
             }
-            set.add(sb.toString());
+            sb.append("\n");
             return;
         }
-
-        for(int i=0;i<n;i++) {
-            ansList.add(arr[i]);
-            dfs(ansList);
-            ansList.removeLast();
+        for(int i=0;i<arr.length;i++) {
+            ans[idx] = arr[i];
+            dfs(ans, idx+1);
         }
     }
 }
