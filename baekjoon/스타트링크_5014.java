@@ -1,97 +1,66 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class 스타트링크_5014 {
+
+    static class Data {
+        int height, cnt;
+
+        Data(int height, int cnt) {
+            this.height = height;
+            this.cnt = cnt;
+        } 
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
-        int a = Integer.parseInt(st.nextToken()),
-        b = Integer.parseInt(st.nextToken()),
-        c = Integer.parseInt(st.nextToken()),
-        d = Integer.parseInt(st.nextToken()),
-        e = Integer.parseInt(st.nextToken());
 
+        int F = Integer.parseInt(st.nextToken()),
+        S = Integer.parseInt(st.nextToken()),
+        G = Integer.parseInt(st.nextToken()),
+        U = Integer.parseInt(st.nextToken()),
+        D = Integer.parseInt(st.nextToken());
+        boolean[] visited = new boolean[F];
 
-        int cnt = 0;
+        PriorityQueue<Data> pq = new PriorityQueue<>(new Comparator<Data>() {
 
-        if(d == 0) {
-            while(b > c) {
-                b -= e;
-                cnt++;
+            @Override
+            public int compare(Data o1, Data o2) {
+                if(Math.abs(G-o1.height) == Math.abs(G-o2.height)) {
+                    return Integer.compare(o1.cnt, o2.cnt);
+                }
+                return Integer.compare(Math.abs(G-o1.height), Math.abs(G-o2.height));
             }
-            if( b == c) {
-                System.out.println(cnt); return;
-            } else {
-                System.out.println("use the stairs");return;
-            }
+            
+        });
+
+        pq.offer(new Data(S, 0));
+
+        if( (D==0 && S > G) || (U==0 && S < G)) {
+            System.out.println("use the stairs");
+              return;
         }
 
-        if(e == 0) {
-            while(b < c) {
-                b += d;
-                cnt++;
+        while(!pq.isEmpty()) {
+            Data data = pq.poll();
+            if(data.height == G) {
+                System.out.println(data.cnt); 
+                return;
             }
-            if( b == c) {
-                System.out.println(cnt); return;
-            } else {
-                System.out.println("use the stairs"); return;
+
+            if(data.height + U <= F && !visited[data.height + U - 1]) {
+                visited[data.height + U - 1] = true;
+                pq.offer(new Data(data.height + U, data.cnt+1));
             }
+            if(data.height - D > 0 && !visited[data.height - D - 1]) {
+                visited[data.height - D - 1] = true;
+                pq.offer(new Data(data.height - D, data.cnt + 1));
+            }
+
         }
-
-        if(d == 0 && e == 0) {
-            if(b == c) {
-                System.out.println(0); return;
-            } else {
-                System.out.println("use the stairs"); return;
-            }
-        }
-
-        boolean isChanged = true;
-        if(b < c) {
-
-            while(b != c) {
-
-                isChanged = false;
-
-                while(b < c && b+d <= a) {
-                    b += d;
-                    cnt++;
-                    isChanged = true;
-                }
-                if(b == c) break;
-                while(b+d > a && b - e > 0) {
-                    b -= e;
-                    isChanged = true;
-                    cnt++;
-                }
-                if(!isChanged) break;
-            }
-        } else {
-            while(b != c) {
-                isChanged = false;
-
-                while(b - e > 0 && (b > c || b+d>a) ) {
-                    b -= e;
-                    System.out.println(b);
-                    isChanged = true;
-                    cnt++;
-                }
-    
-                if(b == c) break;
-    
-                while(b+d <= a && (b < c || b-e <=0)) {
-                    b += d;
-                    cnt++;
-                    isChanged = true;
-                }
-                if(!isChanged) break;
-            }
-        }
-        if(!isChanged) System.out.println("use the stairs");
-        System.out.println(cnt);
+        System.out.println("use the stairs");
     }
 }
