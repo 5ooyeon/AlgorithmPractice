@@ -1,9 +1,7 @@
 package baekjoon;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.*;
+import java.util.*;
 
 public class 인구이동_16234 {
     static class Location {
@@ -14,6 +12,7 @@ public class 인구이동_16234 {
         }
     }
     static int N, L, R, arr[][], check[][], hap, cnt;
+    static Queue<Location> queue = new ArrayDeque<>();
     static int[] dx = {-1, 0, 1, 0}, dy = {0, 1, 0, -1};
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
@@ -54,31 +53,44 @@ public class 인구이동_16234 {
             for(int i=0;i<N;i++) {
                 for(int j=0;j<N;j++) {
                     if(check[i][j] == 1) {
-                        int[] temp = dfs(i, j)
+                        hap = arr[i][j]; cnt = 1;
+                        queue.clear(); queue.offer(new Location(i, j));
+                        check[i][j] = 0;
+                        putInQueue(i, j);
+                        if(changePop(hap/cnt)) {
+                            isChanged = true;
+                        }
                     }
                 }
             }
-        }
-    }
-    static int[][] changePop(int idx, int amount) {
-        int[][] returnArr = new int[N][N];
-        for(int i=0;i<N;i++) {
-            for(int j=0;j<N;j++) {
-                if(check[i][j] == idx) {
-                    returnArr[i][j] = amount;
-                } else {
-                    returnA
-                }
+            if(!isChanged) {
+                System.out.println(day);return;
             }
+            day++;
         }
     }
-    static void dfs(int x, int y, int idx) {
-        for(int i=0;i<4;i++) {
+
+    static boolean changePop(int newNum) {
+        boolean isChanged = false;
+        while(!queue.isEmpty()) {
+            Location loc = queue.poll();
+            int ori = arr[loc.x][loc.y];
+            arr[loc.x][loc.y] = newNum;
+
+            if(ori != newNum) isChanged = true;
+        }
+        return isChanged;
+    }
+
+    static void putInQueue(int i, int j) {
+        for(int c=0;c<4;c++) {
+            int x = i+dx[c], y = j+dy[c];
             try {
-                if(isInRange(x+dx[i], y+dy[i]) && check[x+dx[i]][y+dy[i]] == 0) {
-                    check[x+dx[i]][y+dy[i]] = idx; cnt++;
-                    hap += arr[x+dx[i]][y+dy[i]];
-                    dfs(x+dx[i], y+dy[i], idx);
+                if(check[x][y] == 1) {
+                    queue.offer(new Location(x, y));
+                    hap += arr[x][y]; cnt++;
+                    check[x][y] = 0;
+                    putInQueue(x, y);
                 }
             } catch (Exception e) {
                 // TODO: handle exception

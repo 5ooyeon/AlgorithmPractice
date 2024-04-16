@@ -15,7 +15,7 @@ public class 게리맨더링_17471 {
         int N = Integer.parseInt(bf.readLine());
         population = new int[N];
         StringTokenizer st = new StringTokenizer(bf.readLine());
-        int totalPop = 0, ans = ;
+        int totalPop = 0, ans = 0;
         for(int i=0;i<N;i++) {
             population[i] = Integer.parseInt(st.nextToken());
             totalPop += population[i];
