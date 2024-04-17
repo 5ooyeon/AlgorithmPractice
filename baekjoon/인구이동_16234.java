@@ -33,14 +33,23 @@ public class 인구이동_16234 {
         
         while(true) {
 
-            int[][] returnArr = new int[N][N];
             boolean isChanged = false;
+            check = new int[N][N];
 
-            check = new int[N][N]; int checkIdx = 1;
             for(int i=0;i<N;i++) {
                 for(int j=0;j<N;j++) {
-                    if(isInRange(i, j)) {
-                        check[i][j] = 1; isChanged = true;
+                    if(check[i][j] == 0) {
+                        hap = 0; cnt = 0; queue.clear();
+                        dfs(i, j);
+
+                        if(cnt != 1) {
+                            isChanged = true;
+                            while(!queue.isEmpty()) {
+                                Location loc = queue.poll();
+                                arr[loc.x][loc.y] = hap/cnt;
+                            }
+                        }
+
                     }
                 }
             }
@@ -48,57 +57,28 @@ public class 인구이동_16234 {
             if(!isChanged) {
                 System.out.println(day); return;
             }
-
-            isChanged = false;
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    if(check[i][j] == 1) {
-                        hap = arr[i][j]; cnt = 1;
-                        queue.clear(); queue.offer(new Location(i, j));
-                        check[i][j] = 0;
-                        putInQueue(i, j);
-                        if(changePop(hap/cnt)) {
-                            isChanged = true;
-                        }
-                    }
-                }
-            }
-            if(!isChanged) {
-                System.out.println(day);return;
-            }
+            
             day++;
         }
     }
 
-    static boolean changePop(int newNum) {
-        boolean isChanged = false;
-        while(!queue.isEmpty()) {
-            Location loc = queue.poll();
-            int ori = arr[loc.x][loc.y];
-            arr[loc.x][loc.y] = newNum;
+    private static void dfs(int x, int y) {
 
-            if(ori != newNum) isChanged = true;
-        }
-        return isChanged;
-    }
+        check[x][y] = 1;
+        queue.offer(new Location(x, y));
+        cnt++;
+        hap += arr[x][y];
 
-    static void putInQueue(int i, int j) {
-        for(int c=0;c<4;c++) {
-            int x = i+dx[c], y = j+dy[c];
+        for(int i=0;i<4;i++) {
             try {
-                if(check[x][y] == 1) {
-                    queue.offer(new Location(x, y));
-                    hap += arr[x][y]; cnt++;
-                    check[x][y] = 0;
-                    putInQueue(x, y);
+                int value = Math.abs(arr[x+dx[i]][y+dy[i]] - arr[x][y]);
+                if(check[x+dx[i]][y+dy[i]] == 0 && value >= L && value <= R) {
+                    dfs(x+dx[i], y+dy[i]);
                 }
-            } catch (Exception e) {
+            } catch (ArrayIndexOutOfBoundsException e) {
                 // TODO: handle exception
             }
         }
     }
 
-    static boolean isInRange(int x, int y) {
-        return arr[x][y] >= L && arr[x][y] <= R;
-    }
 }
