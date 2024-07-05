@@ -1,0 +1,1652 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "DoublyLinkedListTest",
+            "request": "launch",
+            "mainClass": "APS.DoublyLinkedListTest",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "A형1번",
+            "request": "launch",
+            "mainClass": "A형보충.A형1번",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "A형2번",
+            "request": "launch",
+            "mainClass": "A형보충.A형2번",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_3234_준환이의양팔저울",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_3234_준환이의양팔저울",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_3234_준환이의양팔저울2",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_3234_준환이의양팔저울2",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_3234_준환이의양팔저울2_ans",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_3234_준환이의양팔저울2_ans",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_3234_준환이의양팔저울_ans",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_3234_준환이의양팔저울_ans",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_5644_무선충전_사용자관점_보충",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_5644_무선충전_사용자관점_보충",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution_5644_무선충전_충전기관점_보충",
+            "request": "launch",
+            "mainClass": "A형보충.Solution_5644_무선충전_충전기관점_보충",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "무선충전",
+            "request": "launch",
+            "mainClass": "A형보충.무선충전",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "준환이의양팔저울",
+            "request": "launch",
+            "mainClass": "A형보충.준환이의양팔저울",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "줄기세포배양",
+            "request": "launch",
+            "mainClass": "A형보충.줄기세포배양",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "줄기세포배양_풀이",
+            "request": "launch",
+            "mainClass": "A형보충.줄기세포배양_풀이",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "창용마을무리의개수",
+            "request": "launch",
+            "mainClass": "A형보충.창용마을무리의개수",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "특이한자석",
+            "request": "launch",
+            "mainClass": "A형보충.특이한자석",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution",
+            "request": "launch",
+            "mainClass": "B형대비.No1새로운불면증치료법.Solution",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution(1)",
+            "request": "launch",
+            "mainClass": "B형대비.No2승강제리그.Solution",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "No2이진수표현",
+            "request": "launch",
+            "mainClass": "B형대비.No2이진수표현",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "No3암호문",
+            "request": "launch",
+            "mainClass": "B형대비.No3암호문",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution(2)",
+            "request": "launch",
+            "mainClass": "B형대비.No4성적조회.Solution",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution(3)",
+            "request": "launch",
+            "mainClass": "B형대비.No5메모장프로그램.Solution",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Solution(4)",
+            "request": "launch",
+            "mainClass": "B형대비.No6상품권배분.Solution",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "PrimAlgorithm",
+            "request": "launch",
+            "mainClass": "PrimAlgorithm",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "ABCDE_13023",
+            "request": "launch",
+            "mainClass": "baekjoon.ABCDE_13023",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "AC_5430",
+            "request": "launch",
+            "mainClass": "baekjoon.AC_5430",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "A와B2_12919",
+            "request": "launch",
+            "mainClass": "baekjoon.A와B2_12919",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "FlymetotheAlphaCentauri_1011",
+            "request": "launch",
+            "mainClass": "baekjoon.FlymetotheAlphaCentauri_1011",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Godzilla_11627",
+            "request": "launch",
+            "mainClass": "baekjoon.Godzilla_11627",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "INK_30036",
+            "request": "launch",
+            "mainClass": "baekjoon.INK_30036",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "LCS_9251",
+            "request": "launch",
+            "mainClass": "baekjoon.LCS_9251",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Lazy_27427",
+            "request": "launch",
+            "mainClass": "baekjoon.Lazy_27427",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Main(1)",
+            "request": "launch",
+            "mainClass": "baekjoon.Main",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "MilkFactory_17199",
+            "request": "launch",
+            "mainClass": "baekjoon.MilkFactory_17199",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N_Queen_3344",
+            "request": "launch",
+            "mainClass": "baekjoon.N_Queen_3344",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N_Queen_9663",
+            "request": "launch",
+            "mainClass": "baekjoon.N_Queen_9663",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M10",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M10",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M11",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M11",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M2_15650",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M2_15650",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M3",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M3",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M4",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M4",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M5",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M5",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M6",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M6",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M7",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M7",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M8",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M8",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N과M9",
+            "request": "launch",
+            "mainClass": "baekjoon.N과M9",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N번째큰수_2075",
+            "request": "launch",
+            "mainClass": "baekjoon.N번째큰수_2075",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "PuyoPuyo_11559",
+            "request": "launch",
+            "mainClass": "baekjoon.PuyoPuyo_11559",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "UDPC파티_27919",
+            "request": "launch",
+            "mainClass": "baekjoon.UDPC파티_27919",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Z_1074",
+            "request": "launch",
+            "mainClass": "baekjoon.Z_1074",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "b8진수2진수_1212",
+            "request": "launch",
+            "mainClass": "baekjoon.b8진수2진수_1212",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "zeromae",
+            "request": "launch",
+            "mainClass": "baekjoon.zeromae",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "가운데를말해요_1655",
+            "request": "launch",
+            "mainClass": "baekjoon.가운데를말해요_1655",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "가장긴감소하는부분수열_11722",
+            "request": "launch",
+            "mainClass": "baekjoon.가장긴감소하는부분수열_11722",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "가장긴증가하는부분수열_11053",
+            "request": "launch",
+            "mainClass": "baekjoon.가장긴증가하는부분수열_11053",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "가장큰정사각형_1915",
+            "request": "launch",
+            "mainClass": "baekjoon.가장큰정사각형_1915",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "감시_15683",
+            "request": "launch",
+            "mainClass": "baekjoon.감시_15683",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "거짓말_1043",
+            "request": "launch",
+            "mainClass": "baekjoon.거짓말_1043",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "게리맨더링_17471",
+            "request": "launch",
+            "mainClass": "baekjoon.게리맨더링_17471",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "계단오르기_2579",
+            "request": "launch",
+            "mainClass": "baekjoon.계단오르기_2579",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "곱셈_1629",
+            "request": "launch",
+            "mainClass": "baekjoon.곱셈_1629",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "공주님을구해라_17836",
+            "request": "launch",
+            "mainClass": "baekjoon.공주님을구해라_17836",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "내려가기_2096",
+            "request": "launch",
+            "mainClass": "baekjoon.내려가기_2096",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "내리막길_1520",
+            "request": "launch",
+            "mainClass": "baekjoon.내리막길_1520",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "너비우선탐색_24444",
+            "request": "launch",
+            "mainClass": "baekjoon.너비우선탐색_24444",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "네트워크연결_1922",
+            "request": "launch",
+            "mainClass": "baekjoon.네트워크연결_1922",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "다리놓기_1010",
+            "request": "launch",
+            "mainClass": "baekjoon.다리놓기_1010",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "단지번호붙이기_2667",
+            "request": "launch",
+            "mainClass": "baekjoon.단지번호붙이기_2667",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "더하기123_9095",
+            "request": "launch",
+            "mainClass": "baekjoon.더하기123_9095",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "도시분할계획_1647",
+            "request": "launch",
+            "mainClass": "baekjoon.도시분할계획_1647",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "동물원_1309",
+            "request": "launch",
+            "mainClass": "baekjoon.동물원_1309",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "두용액_2470",
+            "request": "launch",
+            "mainClass": "baekjoon.두용액_2470",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "로또_6603",
+            "request": "launch",
+            "mainClass": "baekjoon.로또_6603",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "리모컨_1107",
+            "request": "launch",
+            "mainClass": "baekjoon.리모컨_1107",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "링크와스타트_15661",
+            "request": "launch",
+            "mainClass": "baekjoon.링크와스타트_15661",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "마법사상어와파이어볼_20056",
+            "request": "launch",
+            "mainClass": "baekjoon.마법사상어와파이어볼_20056",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "맥주마시면서걸어가기_9205",
+            "request": "launch",
+            "mainClass": "baekjoon.맥주마시면서걸어가기_9205",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "문자열폭발_9935",
+            "request": "launch",
+            "mainClass": "baekjoon.문자열폭발_9935",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "미로탐색_2178",
+            "request": "launch",
+            "mainClass": "baekjoon.미로탐색_2178",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "미세먼지안녕느낌표_17144",
+            "request": "launch",
+            "mainClass": "baekjoon.미세먼지안녕느낌표_17144",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "바이러스_2606",
+            "request": "launch",
+            "mainClass": "baekjoon.바이러스_2606",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "배열돌리기2_16927",
+            "request": "launch",
+            "mainClass": "baekjoon.배열돌리기2_16927",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "배열돌리기3_16935",
+            "request": "launch",
+            "mainClass": "baekjoon.배열돌리기3_16935",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "배열돌리기4_17406",
+            "request": "launch",
+            "mainClass": "baekjoon.배열돌리기4_17406",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "뱀_3190",
+            "request": "launch",
+            "mainClass": "baekjoon.뱀_3190",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "뱀과사다리게임_16928",
+            "request": "launch",
+            "mainClass": "baekjoon.뱀과사다리게임_16928",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "베르트랑공준_4948",
+            "request": "launch",
+            "mainClass": "baekjoon.베르트랑공준_4948",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "벽부수고이동하기2_14442",
+            "request": "launch",
+            "mainClass": "baekjoon.벽부수고이동하기2_14442",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "벽부수고이동하기_2206",
+            "request": "launch",
+            "mainClass": "baekjoon.벽부수고이동하기_2206",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "별자리만들기_4386",
+            "request": "launch",
+            "mainClass": "baekjoon.별자리만들기_4386",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "별찍기10_2447",
+            "request": "launch",
+            "mainClass": "baekjoon.별찍기10_2447",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "별찍기11_2448",
+            "request": "launch",
+            "mainClass": "baekjoon.별찍기11_2448",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "보석상자_2792",
+            "request": "launch",
+            "mainClass": "baekjoon.보석상자_2792",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "볼링장아르바이트_27979",
+            "request": "launch",
+            "mainClass": "baekjoon.볼링장아르바이트_27979",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "부분수열의합2_1208",
+            "request": "launch",
+            "mainClass": "baekjoon.부분수열의합2_1208",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "부분수열의합_1182",
+            "request": "launch",
+            "mainClass": "baekjoon.부분수열의합_1182",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "불_5427",
+            "request": "launch",
+            "mainClass": "baekjoon.불_5427",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "불느낌표_4179",
+            "request": "launch",
+            "mainClass": "baekjoon.불느낌표_4179",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "빙산_2573",
+            "request": "launch",
+            "mainClass": "baekjoon.빙산_2573",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "상근이의여행_9372",
+            "request": "launch",
+            "mainClass": "baekjoon.상근이의여행_9372",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "상범빌딩_6593",
+            "request": "launch",
+            "mainClass": "baekjoon.상범빌딩_6593",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "상어키우기_30892",
+            "request": "launch",
+            "mainClass": "baekjoon.상어키우기_30892",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "색종이붙이기_17136",
+            "request": "launch",
+            "mainClass": "baekjoon.색종이붙이기_17136",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "세용액_2473",
+            "request": "launch",
+            "mainClass": "baekjoon.세용액_2473",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "소문난칠공주_1941",
+            "request": "launch",
+            "mainClass": "baekjoon.소문난칠공주_1941",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "수강과목_17845",
+            "request": "launch",
+            "mainClass": "baekjoon.수강과목_17845",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "수도쿠채점_9291",
+            "request": "launch",
+            "mainClass": "baekjoon.수도쿠채점_9291",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "숨바꼭질3_13549",
+            "request": "launch",
+            "mainClass": "baekjoon.숨바꼭질3_13549",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "숨박꼭질1_1697",
+            "request": "launch",
+            "mainClass": "baekjoon.숨박꼭질1_1697",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "쉬운계단수",
+            "request": "launch",
+            "mainClass": "baekjoon.쉬운계단수",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "스_스_스도쿠_4056",
+            "request": "launch",
+            "mainClass": "baekjoon.스_스_스도쿠_4056",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "스도쿠_2239",
+            "request": "launch",
+            "mainClass": "baekjoon.스도쿠_2239",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "스타트링크_5014",
+            "request": "launch",
+            "mainClass": "baekjoon.스타트링크_5014",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "스택수열_1874",
+            "request": "launch",
+            "mainClass": "baekjoon.스택수열_1874",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "스티커_9465",
+            "request": "launch",
+            "mainClass": "baekjoon.스티커_9465",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "시그마",
+            "request": "launch",
+            "mainClass": "baekjoon.시그마",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "신기한소수_2023",
+            "request": "launch",
+            "mainClass": "baekjoon.신기한소수_2023",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "아기상어2트_16236",
+            "request": "launch",
+            "mainClass": "baekjoon.아기상어2트_16236",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "아기상어_16236",
+            "request": "launch",
+            "mainClass": "baekjoon.아기상어_16236",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "안전영역_2468",
+            "request": "launch",
+            "mainClass": "baekjoon.안전영역_2468",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "알파벳_1987",
+            "request": "launch",
+            "mainClass": "baekjoon.알파벳_1987",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "암호만들기_1759",
+            "request": "launch",
+            "mainClass": "baekjoon.암호만들기_1759",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "야구_17281",
+            "request": "launch",
+            "mainClass": "baekjoon.야구_17281",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "에디터_1406",
+            "request": "launch",
+            "mainClass": "baekjoon.에디터_1406",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "연결요소의개수_11724",
+            "request": "launch",
+            "mainClass": "baekjoon.연결요소의개수_11724",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "연구소_14502",
+            "request": "launch",
+            "mainClass": "baekjoon.연구소_14502",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "예산_2512",
+            "request": "launch",
+            "mainClass": "baekjoon.예산_2512",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "오큰수_17298",
+            "request": "launch",
+            "mainClass": "baekjoon.오큰수_17298",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "옥상정원꾸미기_6198",
+            "request": "launch",
+            "mainClass": "baekjoon.옥상정원꾸미기_6198",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "외계인의기타연주_2841",
+            "request": "launch",
+            "mainClass": "baekjoon.외계인의기타연주_2841",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "요세푸스문제_1158",
+            "request": "launch",
+            "mainClass": "baekjoon.요세푸스문제_1158",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "용액_2467",
+            "request": "launch",
+            "mainClass": "baekjoon.용액_2467",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "작업_2056",
+            "request": "launch",
+            "mainClass": "baekjoon.위상정렬.작업_2056",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "유기농배추_1012",
+            "request": "launch",
+            "mainClass": "baekjoon.유기농배추_1012",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "은하철도_17250",
+            "request": "launch",
+            "mainClass": "baekjoon.은하철도_17250",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이동하기_11048",
+            "request": "launch",
+            "mainClass": "baekjoon.이동하기_11048",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이중우선순위큐_7662",
+            "request": "launch",
+            "mainClass": "baekjoon.이중우선순위큐_7662",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이중큐",
+            "request": "launch",
+            "mainClass": "baekjoon.이중큐",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이진검색트리_5639",
+            "request": "launch",
+            "mainClass": "baekjoon.이진검색트리_5639",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이진수덧셈_1252",
+            "request": "launch",
+            "mainClass": "baekjoon.이진수덧셈_1252",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "인구이동_16234",
+            "request": "launch",
+            "mainClass": "baekjoon.인구이동_16234",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "적록색약_10026",
+            "request": "launch",
+            "mainClass": "baekjoon.적록색약_10026",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "전력난_6497",
+            "request": "launch",
+            "mainClass": "baekjoon.전력난_6497",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "절댓값힙_11286",
+            "request": "launch",
+            "mainClass": "baekjoon.절댓값힙_11286",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "점프_1890",
+            "request": "launch",
+            "mainClass": "baekjoon.점프_1890",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "정수를1로만들기_1463",
+            "request": "launch",
+            "mainClass": "baekjoon.정수를1로만들기_1463",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "제곱ㄴㄴ수_1016",
+            "request": "launch",
+            "mainClass": "baekjoon.제곱ㄴㄴ수_1016",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "좋은단어_3986",
+            "request": "launch",
+            "mainClass": "baekjoon.좋은단어_3986",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "주사위굴리기_14499",
+            "request": "launch",
+            "mainClass": "baekjoon.주사위굴리기_14499",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "주사위쌓기_2116",
+            "request": "launch",
+            "mainClass": "baekjoon.주사위쌓기_2116",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "줄세우기_2252",
+            "request": "launch",
+            "mainClass": "baekjoon.줄세우기_2252",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "중복제거_13701",
+            "request": "launch",
+            "mainClass": "baekjoon.중복제거_13701",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "집합_11723",
+            "request": "launch",
+            "mainClass": "baekjoon.집합_11723",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "집합_비트마스크_11723",
+            "request": "launch",
+            "mainClass": "baekjoon.집합_비트마스크_11723",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "창문닫기_13909",
+            "request": "launch",
+            "mainClass": "baekjoon.창문닫기_13909",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "최단경로_1753",
+            "request": "launch",
+            "mainClass": "baekjoon.최단경로_1753",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "최대힙_11279",
+            "request": "launch",
+            "mainClass": "baekjoon.최대힙_11279",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "최소스패닝트리_1197",
+            "request": "launch",
+            "mainClass": "baekjoon.최소스패닝트리_1197",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "최소힙_1927",
+            "request": "launch",
+            "mainClass": "baekjoon.최소힙_1927",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "치즈_2636",
+            "request": "launch",
+            "mainClass": "baekjoon.치즈_2636",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "친구네트워크_4195",
+            "request": "launch",
+            "mainClass": "baekjoon.친구네트워크_4195",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "카드정렬하기_1715",
+            "request": "launch",
+            "mainClass": "baekjoon.카드정렬하기_1715",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "컵라면",
+            "request": "launch",
+            "mainClass": "baekjoon.컵라면",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "탑_2493",
+            "request": "launch",
+            "mainClass": "baekjoon.탑_2493",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "텀프로젝트_9466",
+            "request": "launch",
+            "mainClass": "baekjoon.텀프로젝트_9466",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "테트로미노_14500",
+            "request": "launch",
+            "mainClass": "baekjoon.테트로미노_14500",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "토마토_7569",
+            "request": "launch",
+            "mainClass": "baekjoon.토마토_7569",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "토마토_7576",
+            "request": "launch",
+            "mainClass": "baekjoon.토마토_7576",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "퇴사2_15486",
+            "request": "launch",
+            "mainClass": "baekjoon.퇴사2_15486",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "퇴사_DP_14501",
+            "request": "launch",
+            "mainClass": "baekjoon.퇴사_DP_14501",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "퇴사_탐색_14501",
+            "request": "launch",
+            "mainClass": "baekjoon.퇴사_탐색_14501",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "트리순회_1991",
+            "request": "launch",
+            "mainClass": "baekjoon.트리순회_1991",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "트리의부모찾기_11725",
+            "request": "launch",
+            "mainClass": "baekjoon.트리의부모찾기_11725",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "틱택토_7682",
+            "request": "launch",
+            "mainClass": "baekjoon.틱택토_7682",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "팀빌딩_22945",
+            "request": "launch",
+            "mainClass": "baekjoon.팀빌딩_22945",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "파일합치기_13975",
+            "request": "launch",
+            "mainClass": "baekjoon.파일합치기_13975",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "패션왕신해빈_9375",
+            "request": "launch",
+            "mainClass": "baekjoon.패션왕신해빈_9375",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "프린터큐_1966",
+            "request": "launch",
+            "mainClass": "baekjoon.프린터큐_1966",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "피보나치수열_1003",
+            "request": "launch",
+            "mainClass": "baekjoon.피보나치수열_1003",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "하노이탑_1914",
+            "request": "launch",
+            "mainClass": "baekjoon.하노이탑_1914",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "합이0인네정수_7453",
+            "request": "launch",
+            "mainClass": "baekjoon.합이0인네정수_7453",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "행렬제곱_10830",
+            "request": "launch",
+            "mainClass": "baekjoon.행렬제곱_10830",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "행운의바퀴_2840",
+            "request": "launch",
+            "mainClass": "baekjoon.행운의바퀴_2840",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "회문_17609",
+            "request": "launch",
+            "mainClass": "baekjoon.회문_17609",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "회장뽑기_2660",
+            "request": "launch",
+            "mainClass": "baekjoon.회장뽑기_2660",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "후위표기식_1918",
+            "request": "launch",
+            "mainClass": "baekjoon.후위표기식_1918",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "염기서열커버_6249",
+            "request": "launch",
+            "mainClass": "softeer.염기서열커버_6249",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "함께하는효도_7727",
+            "request": "launch",
+            "mainClass": "softeer.함께하는효도_7727",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Main(2)",
+            "request": "launch",
+            "mainClass": "swea.Main",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "N_Queen",
+            "request": "launch",
+            "mainClass": "swea.N_Queen",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "Subtree",
+            "request": "launch",
+            "mainClass": "swea.Subtree",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "거듭제곱",
+            "request": "launch",
+            "mainClass": "swea.거듭제곱",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "계산기1",
+            "request": "launch",
+            "mainClass": "swea.계산기1",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "공통조상",
+            "request": "launch",
+            "mainClass": "swea.공통조상",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "그는내가아는전설의폭탄마였어",
+            "request": "launch",
+            "mainClass": "swea.그는내가아는전설의폭탄마였어",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "기지국",
+            "request": "launch",
+            "mainClass": "swea.기지국",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "나무높이",
+            "request": "launch",
+            "mainClass": "swea.나무높이",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "나무높이2",
+            "request": "launch",
+            "mainClass": "swea.나무높이2",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "노드의합",
+            "request": "launch",
+            "mainClass": "swea.노드의합",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "등산로",
+            "request": "launch",
+            "mainClass": "swea.등산로",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "백만개의정수정렬",
+            "request": "launch",
+            "mainClass": "swea.백만개의정수정렬",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "보급로",
+            "request": "launch",
+            "mainClass": "swea.보급로",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "보물상자비밀번호",
+            "request": "launch",
+            "mainClass": "swea.보물상자비밀번호",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "보호필름",
+            "request": "launch",
+            "mainClass": "swea.보호필름",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "부분수열의수",
+            "request": "launch",
+            "mainClass": "swea.부분수열의수",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "사칙연산",
+            "request": "launch",
+            "mainClass": "swea.사칙연산",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "상호의배틀필드",
+            "request": "launch",
+            "mainClass": "swea.상호의배틀필드",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "서로소",
+            "request": "launch",
+            "mainClass": "swea.서로소",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "쇠막대기",
+            "request": "launch",
+            "mainClass": "swea.쇠막대기",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "수영장",
+            "request": "launch",
+            "mainClass": "swea.수영장",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "숫자를정렬하자",
+            "request": "launch",
+            "mainClass": "swea.숫자를정렬하자",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "슈크림붕어빵",
+            "request": "launch",
+            "mainClass": "swea.슈크림붕어빵",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "슈크림붕어빵2",
+            "request": "launch",
+            "mainClass": "swea.슈크림붕어빵2",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "암호문3",
+            "request": "launch",
+            "mainClass": "swea.암호문3",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "암호생성기",
+            "request": "launch",
+            "mainClass": "swea.암호생성기",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "요리사",
+            "request": "launch",
+            "mainClass": "swea.요리사",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이진수표현",
+            "request": "launch",
+            "mainClass": "swea.이진수표현",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "이진탐색",
+            "request": "launch",
+            "mainClass": "swea.이진탐색",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "일회용",
+            "request": "launch",
+            "mainClass": "swea.일회용",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "작업순서",
+            "request": "launch",
+            "mainClass": "swea.작업순서",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "장훈이의높은선반",
+            "request": "launch",
+            "mainClass": "swea.장훈이의높은선반",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "준홍이의카드놀이",
+            "request": "launch",
+            "mainClass": "swea.준홍이의카드놀이",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "준홍이의카드놀이2",
+            "request": "launch",
+            "mainClass": "swea.준홍이의카드놀이2",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "중위순회",
+            "request": "launch",
+            "mainClass": "swea.중위순회",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "최소신장트리",
+            "request": "launch",
+            "mainClass": "swea.최소신장트리",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "치자피즈",
+            "request": "launch",
+            "mainClass": "swea.치자피즈",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "치즈도둑",
+            "request": "launch",
+            "mainClass": "swea.치즈도둑",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "파동파동",
+            "request": "launch",
+            "mainClass": "swea.파동파동",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "퍼펙트셔플",
+            "request": "launch",
+            "mainClass": "swea.퍼펙트셔플",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "퍼펙트셔플2",
+            "request": "launch",
+            "mainClass": "swea.퍼펙트셔플2",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "프로세서",
+            "request": "launch",
+            "mainClass": "swea.프로세서",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "핀볼게임",
+            "request": "launch",
+            "mainClass": "swea.핀볼게임",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "하나로",
+            "request": "launch",
+            "mainClass": "swea.하나로",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        },
+        {
+            "type": "java",
+            "name": "햄버거다이어트",
+            "request": "launch",
+            "mainClass": "swea.햄버거다이어트",
+            "projectName": "AlgorithmPractice_59fe5ad3"
+        }
+    ]
+}
