@@ -146,17 +146,14 @@ public class 빌런호석_22251 {
         P = Integer.parseInt(st.nextToken());
         X = Integer.parseInt(st.nextToken());
         
-        // Initialize panel differences
         initializePanel();
         
-        // Convert X to a string with leading zeros
         key = String.format("%0" + K + "d", X);
         
         cnt = 0;
         
-        // Check all possible floors
         for (int i = 1; i <= N; i++) {
-            if (i == X) continue; // Skip the current floor
+            if (i == X) continue;
             
             String target = String.format("%0" + K + "d", i);
             int ledChanges = calculateLedChanges(key, target);
