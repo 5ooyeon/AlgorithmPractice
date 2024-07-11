@@ -29,6 +29,7 @@ public class 욕심쟁이판다_1937 {
         }
 
         System.out.println(ans);
+        
     }
     private static int dp(int i, int j) {
         if(dp[i][j] != 0) return dp[i][j];
