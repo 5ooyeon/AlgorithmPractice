@@ -23,6 +23,6 @@ public class Lazy_27427 {
     }
 
     public static void main(String[] args) {
-        BufferedReader bf = new BufferedReader(null)
+        BufferedReader bf = new BufferedReader(null);
     }
 }
