@@ -7,54 +7,84 @@ import java.util.*;
 
 public class ZOAC_16719 {
     static class Node {
+        Node left, right;
+        char data;
         int idx;
-        char letter;
 
-        Node(int idx, char letter) {
+        Node(Node left, Node right, char data, int idx) {
+            this.left = left;
+            this.right = right;
+            this.data = data;
             this.idx = idx;
-            this.letter = letter;
         }
     }
 
+    static Node head;
+
     public static void main(String[] args) throws IOException {
-
-        char[][] arr;
-
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
-        String input = bf.readLine();
-        PriorityQueue<Node> pq = new PriorityQueue<>(new Comparator<Node>() {
-
-            @Override
-            public int compare(Node o1, Node o2) {
-                if (o1.letter == o2.letter) {
-                    return o1.idx - o2.idx;
-                }
-                return o1.letter - o2.letter;
-            }
-
-        });
         StringBuilder sb = new StringBuilder();
+        
+        String input = bf.readLine();
+        char[] arr = input.toCharArray();
+        Arrays.sort(arr);
 
-        for (int i = 0; i < input.length(); i++) {
-            pq.offer(new Node(i, input.charAt(i)));
+        // Initialize the head node
+        for (int i = 0; i < arr.length; i++) {
+            if (input.charAt(i) == arr[0]) {
+                head = new Node(null, null, arr[0], i);
+                break;
+            }
         }
 
-        boolean[] visited = new boolean[input.length()];
-        while (!pq.isEmpty()) {
-            Node current = pq.poll();
-            if (visited[current.idx])
-                continue;
+        System.out.println(head.data);
 
-            visited[current.idx] = true;
-            sb.append(current.letter);
-
-            // 이전에 선택된 문자들을 포함하여 새로운 결과를 생성
+        // Insert remaining characters
+        for (int cnt = 1; cnt < arr.length; cnt++) {
+            char targetChar = arr[cnt];
             for (int i = 0; i < input.length(); i++) {
-                if (visited[i]) {
-                    System.out.print(input.charAt(i));
+                if (input.charAt(i) == targetChar) {
+                    Node targetNode = new Node(null, null, targetChar, i);
+                    insertNode(head, targetNode);
+
+                    // Print current state of the tree
+                    sb.setLength(0); // Clear the StringBuilder
+                    printInOrder(head, sb);
+                    System.out.println(sb.toString());
+
+                    break; // Move to the next character to be inserted
                 }
             }
-            System.out.println();
+        }
+    }
+
+    // Insert a node into the tree
+    static void insertNode(Node current, Node newNode) {
+        while (true) {
+            if (newNode.idx < current.idx) {
+                if (current.left == null) {
+                    current.left = newNode;
+                    break;
+                } else {
+                    current = current.left;
+                }
+            } else {
+                if (current.right == null) {
+                    current.right = newNode;
+                    break;
+                } else {
+                    current = current.right;
+                }
+            }
+        }
+    }
+
+    // In-order traversal to print the current state of the tree
+    static void printInOrder(Node node, StringBuilder sb) {
+        if (node != null) {
+            printInOrder(node.left, sb);
+            sb.append(node.data);
+            printInOrder(node.right, sb);
         }
     }
 }

@@ -1,59 +1,65 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.*;
+import java.io.*;
 
 public class Main {
-    static int N, M, arr[][], dx[] = {-1, 0, 1, 0}, dy[] = {0, 1, 0, -1}, sum, cost;
-    static boolean visited[][];
-    public static void main(String[] args) throws NumberFormatException, IOException {
-        BufferedReader bf= new BufferedReader(new InputStreamReader(System.in));
-        int t = Integer.parseInt(bf.readLine());
-        for(int tc = 1; tc<=t; tc++) {
-            StringTokenizer st = new StringTokenizer(bf.readLine());
-            N = Integer.parseInt(st.nextToken()); M =Integer.parseInt(st.nextToken());
-            arr = new int[N][N];
-            for(int i=0;i<N;i++) {
-                st = new StringTokenizer(bf.readLine());
-                for(int j=0;j<N;j++) {
-                    arr[i][j] = Integer.parseInt(st.nextToken());
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        List<int[]> players = new ArrayList<>();
+        String line;
+        
+        // 입력 받기
+        // int[][] inputs = new int[][] {{2, 2},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{1, 1},{100, 100}};
+
+        while ((line = br.readLine()) != null && !line.isEmpty()) {
+            String[] parts = line.split(" ");
+            int white = Integer.parseInt(parts[0]);
+            int black = Integer.parseInt(parts[1]);
+            players.add(new int[]{white, black});
+        }
+
+        // for(int i=0;i<16;i++) {
+        //     players.add(inputs[i]);
+        // }
+        
+        int n = players.size();
+        int[][][] dp = new int[n + 1][16][16];
+        
+        // DP 테이블 초기화
+        for (int i = 0; i <= n; i++) {
+            for (int w = 0; w <= 15; w++) {
+                for (int b = 0; b <= 15; b++) {
+                    dp[i][w][b] = -1;
                 }
             }
-            
-            for(int i=0;i<N;i++) {
-                for(int j=0;j<N;j++) {
-                    getSum(i, j);
+        }
+        dp[0][0][0] = 0;
+        
+        // DP 계산
+        for (int i = 1; i <= n; i++) {
+            int white = players.get(i - 1)[0];
+            int black = players.get(i - 1)[1];
+            for (int w = 0; w <= 15; w++) {
+                for (int b = 0; b <= 15; b++) {
+                    if (dp[i-1][w][b] != -1) {
+                        // 이 플레이어를 선택하지 않는 경우
+                        dp[i][w][b] = Math.max(dp[i][w][b], dp[i-1][w][b]);
+                        
+                        // 백으로 선택하는 경우
+                        if (w < 15) {
+                            dp[i][w+1][b] = Math.max(dp[i][w+1][b], dp[i-1][w][b] + white);
+                        }
+                        
+                        // 흑으로 선택하는 경우
+                        if (b < 15) {
+                            dp[i][w][b+1] = Math.max(dp[i][w][b+1], dp[i-1][w][b] + black);
+                        }
+                    }
                 }
             }
-            
-            
         }
-    }
-    
-    static void getSum(int x, int y) {
-        int k = 0;
-        int benefit = arr[x][y] == 1 ? M - 1 : 0;
-        while(true) {
-            k++; //k==2
-            sum = 0; cost = 0;
-            dfs(k, x, y, 0);
-            benefit = Math.max(sum - cost, benefit);
-            
-        }
-    }
-
-    static void dfs(int k, int x, int y, int depth) {
-        if(depth == k) return;
-        for(int i=0;i<4;i++) {
-            if(isInRange(x+dx[i], y+dy[i])) {
-                visited[x+dx[i]][y+dy[i]] = true; cost++;
-                if(arr[x+dx[i]][y+dy[i]] == 1) sum++;
-                dfs(k, x+dx[i], y+dy[i], depth+1);
-            }
-        }
-    }
-
-    static boolean isInRange(int x, int y) {
-        return 0 <= x && x < N && 0 <= y && y < N && !visited[x][y];
+        
+        // 최대 능력치 찾기
+        int maxAbility = dp[n][15][15];
+        System.out.println(maxAbility);
     }
 }
