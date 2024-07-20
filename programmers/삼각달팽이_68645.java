@@ -1,9 +1,7 @@
 package programmers;
-
 import java.util.*;
 
 public class 삼각달팽이_68645 {
-    
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(Arrays.toString(solution.solution(6)));
