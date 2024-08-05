@@ -34,7 +34,7 @@ public class 민식어_1599 {
                     } else if(input.charAt(j)=='n') {
                         word.after += "n"; continue;
                     } else {
-                        word.after += Character.toString(input.charAt(j)+1);
+                        word.after += Character.toString((char)(input.charAt(j) + 1));
                     }
                 } else {
                     word.after += Character.toString(input.charAt(j));
