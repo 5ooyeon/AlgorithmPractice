@@ -13,5 +13,6 @@ public class 가르침_1062 {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         String[] inputs = bf.readLine().split(" ");
         int n = Integer.parseInt(inputs[0]), m = Integer.parseInt(inputs[1]);
+        
     }
 }
