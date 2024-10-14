@@ -32,9 +32,12 @@ public class 경사로_14890 {
                     continue;
                 } else if(Math.abs(arr[i][j] - arr[i][j+1]) != 1) {
                     continue newrow;
-                } else if(!useStairs[i][j] && checkStairs(i, j, 0)) {
+                } else if(arr[i][j] - arr[i][j+1] == 1 && !useStairs[i][j+1] && checkStairs(i, j, 0)) {
                     continue;
-                } else {
+                } else if(arr[i][j] - arr[i][j+1] == -1 && !useStairs[i][j] && checkStairs(i, j, 0)) {
+                    continue;
+                }
+                else {
                     continue newrow;
                 }
 
@@ -52,8 +55,10 @@ public class 경사로_14890 {
                     continue;
                 } else if(Math.abs(arr[j][i] - arr[j+1][i]) != 1) {
                     continue newcol;
-                } else if(!useStairs[j][i] && checkStairs(i, j, 1)) {
-                    j += L;
+                } else if(arr[j][i] - arr[j+1][i] == 1 && !useStairs[j+1][j] && checkStairs(j, i, 0)) {
+                    continue;
+                } else if(arr[j][i] - arr[j+1][i] == -1 && !useStairs[j][i] && checkStairs(j, i, 0)) {
+                    continue;
                 } else {
                     continue newcol;
                 }
@@ -82,18 +87,9 @@ public class 경사로_14890 {
             return false;
         }
 
-        try {
-            for(int idx=0;idx < L;idx++) {
-                if(dir == 0) {
-                    useStairs[i][j+idx+1] = true;
-    
-                } else {
-                    useStairs[i+idx+1][j] = true;
-                }
-            }
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+        
+
+
         return true;
     }
 }
