@@ -56,7 +56,7 @@ public class 벽부수고이동하기2_14442 {
                 int x = loc.x+dx[i], y = loc.y+dy[i];
                 try {
                     if(arr[x][y] == 1) {
-                        if(visited[x][y][wallCnt])
+                        // if(visited[x][y][wallCnt])
                     }
                 } catch (Exception e) {
                     // TODO: handle exception

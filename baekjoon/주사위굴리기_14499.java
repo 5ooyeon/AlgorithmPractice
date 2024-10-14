@@ -44,7 +44,7 @@ public class 주사위굴리기_14499 {
         st = new StringTokenizer(bf.readLine());
 
         Scanner sc = new Scanner(System.in);
-        BigInt
+        // BigInt
 
     }
 }

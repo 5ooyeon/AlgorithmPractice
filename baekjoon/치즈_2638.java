@@ -3,7 +3,8 @@ package baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.util.ArrayDeque;
+import java.util.*;
 
 public class 치즈_2638 {
     public static class Loc {
