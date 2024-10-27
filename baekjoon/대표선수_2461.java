@@ -4,84 +4,65 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
 public class 대표선수_2461 {
-    static int arr[][];
-    static class Num {
-        int classIdx,studentIdx, score;
+    static int[][] arr;
 
-        Num(int classIdx, int studentIdx) {
+    static class Num {
+        int classIdx, studentIdx, score;
+
+        Num(int classIdx, int studentIdx, int score) {
             this.classIdx = classIdx;
             this.studentIdx = studentIdx;
-            this.score = arr[classIdx][studentIdx];
+            this.score = score;
         }
     }
+
     public static void main(String[] args) throws IOException {
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(bf.readLine());
         int N = Integer.parseInt(st.nextToken()), M = Integer.parseInt(st.nextToken());
         arr = new int[N][M];
 
-        for(int i=0;i<N;i++) {
+        // 입력 받고 각 반 학생들의 점수를 오름차순으로 정렬
+        for (int i = 0; i < N; i++) {
             st = new StringTokenizer(bf.readLine());
-            for(int j=0;j<M;j++) {
+            for (int j = 0; j < M; j++) {
                 arr[i][j] = Integer.parseInt(st.nextToken());
             }
             Arrays.sort(arr[i]);
         }
 
-        int min = Integer.MAX_VALUE, ans = Integer.MAX_VALUE;
-        int[] idx = new int[N];
-        Arrays.fill(idx, 0);
-        
-        while(true) {
-            int minV = Integer.MAX_VALUE, maxV = Integer.MIN_VALUE, minIdx = -1;
-            int[][] idxValues = new int[N][2];
-            PriorityQueue<Num> pq = new PriorityQueue<>(new Comparator<Num>() {
+        int ans = Integer.MAX_VALUE;
 
-                @Override
-                public int compare(Num o1, Num o2) {
-                    if(o1.score == o2.score) {
-                        return o1.studentIdx - o2.studentIdx;
-                    }
-                    return o1.score - o2.score;
-                }
-                
-            });
+        // 초기 우선순위 큐 설정 (최소 힙)
+        PriorityQueue<Num> pq = new PriorityQueue<>((o1, o2) -> Integer.compare(o1.score, o2.score));
+        int maxScore = Integer.MIN_VALUE;
 
-            PriorityQueue<Num> maxPq = new PriorityQueue<>(new Comparator<Num>() {
+        // 각 반의 첫 번째 학생을 우선순위 큐에 넣음
+        for (int i = 0; i < N; i++) {
+            pq.offer(new Num(i, 0, arr[i][0]));
+            maxScore = Math.max(maxScore, arr[i][0]);
+        }
 
-                @Override
-                public int compare(Num o1, Num o2) {
-                    if(o1.score == o2.score) {
-                        return o1.studentIdx - o2.studentIdx;
-                    }
-                    return o2.score - o1.score;
-                }
-                
-            });
+        // 최소 범위를 찾기 위한 루프
+        while (true) {
+            Num minNum = pq.poll();
+            ans = Math.min(ans, maxScore - minNum.score);
 
-            for(int i=0;i<N;i++) {
-                idxValues[i][0] = i;
-                idxValues[i][1] = arr[i][idx[i]];
-                pq.offer(new Num(i, idx[i]));
-                maxPq.offer(new Num(i, idx[i]));
-            }
-            ans = Math.min(ans, (maxPq.peek().score - pq.peek().score));
-            
-            while (!pq.isEmpty()) {
-                Num num = pq.poll();
-                if(num.studentIdx == M-1) continue;
-                idx[num.classIdx]++;
-                break;
-            }
-            if(pq.isEmpty()) {
+            // 해당 반의 다음 학생으로 이동
+            if (minNum.studentIdx + 1 < M) {
+                int nextScore = arr[minNum.classIdx][minNum.studentIdx + 1];
+                pq.offer(new Num(minNum.classIdx, minNum.studentIdx + 1, nextScore));
+                maxScore = Math.max(maxScore, nextScore);
+            } else {
+                // 더 이상 해당 반의 학생이 없으면 종료
                 break;
             }
         }
+
         System.out.println(ans);
     }
 }
